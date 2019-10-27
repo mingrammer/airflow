@@ -1175,7 +1175,7 @@ SSH Hook now uses the Paramiko library to create an ssh client connection, inste
 
 ### S3Hook switched to use Boto3
 
-The airflow.hooks.S3_hook.S3Hook has been switched to use boto3 instead of the older boto (a.k.a. boto2). This results in a few backwards incompatible changes to the following classes: S3Hook:
+The airflow.hooks.s3_hook.S3Hook has been switched to use boto3 instead of the older boto (a.k.a. boto2). This results in a few backwards incompatible changes to the following classes: S3Hook:
 
 - the constructors no longer accepts `s3_conn_id`. It is now called `aws_conn_id`.
 - the default connection is now "aws_default" instead of "s3_default"

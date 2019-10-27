@@ -26,7 +26,7 @@ from typing import Dict, Optional, Union
 
 from airflow.exceptions import AirflowException
 from airflow.hooks.hive_hooks import HiveCliHook
-from airflow.hooks.S3_hook import S3Hook
+from airflow.hooks.s3_hook import S3Hook
 from airflow.models import BaseOperator
 from airflow.utils.compression import uncompress_file
 from airflow.utils.decorators import apply_defaults

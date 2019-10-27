@@ -21,7 +21,7 @@ import os
 import unittest
 from unittest import mock
 
-from airflow.hooks.S3_hook import S3Hook
+from airflow.hooks.s3_hook import S3Hook
 from airflow.models import DAG, TaskInstance
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.utils.log.s3_task_handler import S3TaskHandler
@@ -81,7 +81,7 @@ class TestS3TaskHandler(unittest.TestCase):
     def test_hook_raises(self):
         handler = self.s3_task_handler
         with mock.patch.object(handler.log, 'error') as mock_error:
-            with mock.patch("airflow.hooks.S3_hook.S3Hook") as mock_hook:
+            with mock.patch("airflow.hooks.s3_hook.S3Hook") as mock_hook:
                 mock_hook.side_effect = Exception('Failed to connect')
                 # Initialize the hook
                 handler.hook
@@ -103,7 +103,7 @@ class TestS3TaskHandler(unittest.TestCase):
         self.assertFalse(self.s3_task_handler.s3_log_exists('s3://nonexistentbucket/foo'))
 
     def test_log_exists_no_hook(self):
-        with mock.patch("airflow.hooks.S3_hook.S3Hook") as mock_hook:
+        with mock.patch("airflow.hooks.s3_hook.S3Hook") as mock_hook:
             mock_hook.side_effect = Exception('Failed to connect')
             self.assertFalse(self.s3_task_handler.s3_log_exists(self.remote_log_location))
 

@@ -23,11 +23,11 @@ from unittest import mock
 
 from botocore.exceptions import NoCredentialsError
 
-from airflow.hooks.S3_hook import provide_bucket_name
+from airflow.hooks.s3_hook import provide_bucket_name
 from airflow.models import Connection
 
 try:
-    from airflow.hooks.S3_hook import S3Hook
+    from airflow.hooks.s3_hook import S3Hook
 except ImportError:
     S3Hook = None  # type: ignore
 

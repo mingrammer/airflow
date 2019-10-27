@@ -19,7 +19,7 @@
 
 import unittest
 
-from airflow.hooks.S3_hook import S3Hook
+from airflow.hooks.s3_hook import S3Hook
 from airflow.operators.gcs_to_s3 import GoogleCloudStorageToS3Operator
 from tests.compat import mock
 
